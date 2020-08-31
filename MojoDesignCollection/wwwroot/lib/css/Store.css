@@ -1,0 +1,28 @@
+﻿body {
+    font-family: myriad-pro, sans-serif;
+    font-style: normal;
+    font-size: 0.9rem;
+}
+
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.storemain {
+    top: 100px;
+    position: relative;
+}
+.card-body {
+    background-color: #8AE9EC;
+}
