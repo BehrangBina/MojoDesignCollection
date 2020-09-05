@@ -9,7 +9,7 @@ namespace MojoDesignCollection.Controllers
     public class StoreController :Controller
     {
         private readonly IStoreRepository _repository;
-        public int PageSize=4;
+        public int PageSize=3;
         public StoreController(IStoreRepository repository)
         {
             _repository = repository;
@@ -37,26 +37,7 @@ namespace MojoDesignCollection.Controllers
                 Products = products
             };
             return View(productListViewModel);
-            //var categoryEnum = Convertor.StringToCategoryEnum(category);
-            //if ( categoryEnum != CategoryEnum.All)
-            //{
-                
-            //    return View(
-            //        _repository
-            //            .Products
-            //            .OrderBy(p => p.ProductId)
-            //            .Where(p=>p.Category.ToLower().Contains(categoryEnum.ToString().ToLower()))
-            //            .Skip((productPage - 1) * PageSize)
-            //        .Take(PageSize));
-            //}
-
-            //return  View(
-            //    _repository
-            //        .Products
-            //        .OrderBy(p => p.ProductId)
-            //        .Skip((productPage - 1) * PageSize)re
-            //        .Take(PageSize)
-            //);
+ 
             
         }
 
