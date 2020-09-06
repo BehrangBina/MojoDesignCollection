@@ -47,6 +47,19 @@ namespace MojoDesignCollection
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}");
+
+                endpoints.MapControllerRoute("catpage","category/Page{productPage:int}",
+                    new {Conroller="Store",action="Index"});
+
+                endpoints.MapControllerRoute("page", "category/Page{productPage:int}",
+                    new { Conroller = "Store", action = "Index" });
+
+                endpoints.MapControllerRoute("category", "{category}",
+                    new { Conroller = "Store", action = "Index",productPage=1 });
+
+                endpoints.MapControllerRoute("pagination", "Products/Page{productPage}",
+                    new { Conroller = "Store", action = "Index", productPage = 1 });
+
             });
             SeedData.EnsurePopulated(app);
         }

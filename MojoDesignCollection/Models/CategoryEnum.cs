@@ -2,6 +2,6 @@
 {
     public enum CategoryEnum
     {
-        Tutu, Fairy,All
+        Tutu, Fairy,Nixie,All
     }
 }

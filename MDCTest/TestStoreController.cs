@@ -30,7 +30,7 @@ namespace MDCTest
 
             //  Act
             StoreController storeController = new StoreController(mock.Object);
-            ProductListViewModel productListViewModels = storeController.Index()
+            ProductListViewModel productListViewModels = storeController.Index(null)
                 .ViewData.Model as ProductListViewModel;
 
             // assert 
@@ -64,7 +64,7 @@ namespace MDCTest
             
             // ARRANGE
             ProductListViewModel productListView =
-                ((ViewResult) storeController.Index(2))
+                ((ViewResult) storeController.Index(null,2))
                 .ViewData.Model as ProductListViewModel;
 
             // Assert 

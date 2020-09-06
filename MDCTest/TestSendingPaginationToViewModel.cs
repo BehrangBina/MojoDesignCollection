@@ -30,7 +30,7 @@ namespace MDCTest
             
             // Act
             ProductListViewModel result =
-                storeController.Index(2).Model as ProductListViewModel;
+                storeController.Index(null,2).Model as ProductListViewModel;
             
             // Assert
             PagingInfo pagingInfo = result?.PagingInfo;
