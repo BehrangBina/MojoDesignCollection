@@ -14,7 +14,8 @@ namespace MDCTest
     public class TestStoreController
     {
         [Test]
-        public void CanUseRepository()
+        [TestCase(CategoryEnum.All)]
+        public void CanUseRepository(CategoryEnum categoryEnum)
         {
             Mock<IStoreRepository> mock = new Mock<IStoreRepository>();
  
@@ -30,7 +31,7 @@ namespace MDCTest
 
             //  Act
             StoreController storeController = new StoreController(mock.Object);
-            ProductListViewModel productListViewModels = storeController.Index(null)
+            ProductListViewModel productListViewModels = storeController.Index(categoryEnum.ToString())
                 .ViewData.Model as ProductListViewModel;
 
             // assert 
@@ -38,12 +39,11 @@ namespace MDCTest
             Assert.AreEqual(productArray?.Length, 2);
             Assert.AreEqual(productArray[0]?.Category, CategoryEnum.Tutu.ToString());
             Assert.AreEqual(productArray[1]?.Name, "Test2");
-
-
         }
 
         [Test]
-        public void TestPagination()
+        [TestCase(CategoryEnum.All)]
+        public void TestPagination(CategoryEnum categoryEnum)
         {
             // ACT
             Mock<IStoreRepository> storeRepoMock = new Mock<IStoreRepository>();
@@ -64,7 +64,7 @@ namespace MDCTest
             
             // ARRANGE
             ProductListViewModel productListView =
-                ((ViewResult) storeController.Index(null,2))
+                ((ViewResult) storeController.Index(categoryEnum.ToString(), 2))
                 .ViewData.Model as ProductListViewModel;
 
             // Assert 

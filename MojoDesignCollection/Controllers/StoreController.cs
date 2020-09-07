@@ -20,12 +20,6 @@ namespace MojoDesignCollection.Controllers
         public ViewResult Index(string category ,int productPage = 1)
         {
 
-            //PagingInfo pagingInfo = new PagingInfo
-            //{
-            //    CurrentPage = productPage,
-            //    ItemsPerPage = PageSize,
-            //    TotalItems = _repository.Products.Count()
-            //};
             IQueryable<Product> products = _repository
                 .Products;
 

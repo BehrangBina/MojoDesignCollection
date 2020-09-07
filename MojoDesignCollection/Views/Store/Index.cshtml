@@ -10,7 +10,7 @@
         <div class="row">
             @foreach (var p in Model.Products)
             {
-                @await Html.PartialAsync("ProductCard", p);
+                @await Html.PartialAsync("Components/ProductCard", p);
             }
         </div>
         <br />
@@ -37,5 +37,6 @@
                 }
             </ul>
         </div>
-        </div>
+    </div>
 </div>
+

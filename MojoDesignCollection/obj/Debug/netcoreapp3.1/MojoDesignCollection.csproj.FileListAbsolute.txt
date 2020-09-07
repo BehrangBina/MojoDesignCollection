@@ -133,7 +133,6 @@ D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Main_Layout.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Store_Layout.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Index.cshtml.g.cs
-D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\ProductCard.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.RazorTargetAssemblyInfo.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.RazorTargetAssemblyInfo.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.Views.pdb
@@ -143,6 +142,8 @@ D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\static
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.dll
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.pdb
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.genruntimeconfig.cache
-D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csprojAssemblyReference.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csproj.CoreCompileInputs.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.MvcApplicationPartsAssemblyInfo.cache
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\ProductCard.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csprojAssemblyReference.cache
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\NavigationMenu\NavigationMenu.cshtml.g.cs
