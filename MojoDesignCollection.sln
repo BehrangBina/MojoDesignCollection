@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MojoDesignCollection", "MojoDesignCollection\MojoDesignCollection.csproj", "{46B615DB-40B7-45AA-BFE2-FA0ACE8448EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MojoDesignCollection", "MojoDesignCollection\MojoDesignCollection.csproj", "{46B615DB-40B7-45AA-BFE2-FA0ACE8448EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDCTest", "MDCTest\MDCTest.csproj", "{F8966E28-F2D7-43E5-93C4-CB25CAC39D3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDCTest", "MDCTest\MDCTest.csproj", "{F8966E28-F2D7-43E5-93C4-CB25CAC39D3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

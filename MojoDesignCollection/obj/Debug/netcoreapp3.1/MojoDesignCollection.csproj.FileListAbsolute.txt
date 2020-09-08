@@ -145,5 +145,7 @@ D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDe
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csproj.CoreCompileInputs.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.MvcApplicationPartsAssemblyInfo.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\ProductCard.cshtml.g.cs
-D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csprojAssemblyReference.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\NavigationMenu\NavigationMenu.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Pages\_CartLayout.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Pages\Cart.cshtml.g.cs

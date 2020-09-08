@@ -21,13 +21,17 @@ namespace MojoDesignCollection
         }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+         
             services.AddDbContext<MojoDesignCollectionDbContext>(opt =>
             {
                 opt.UseSqlServer(
                     Configuration["ConnectionStrings:MojoDesignCollectionContext"]
                     );
             });
+            services.AddMvc();
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache(); // in memory data store
+            services.AddSession();
             services.AddScoped<IStoreRepository, EfMdcRepository>();
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +45,7 @@ namespace MojoDesignCollection
             }
             app.UseStaticFiles();
             app.UseRouting();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -59,7 +63,7 @@ namespace MojoDesignCollection
 
                 endpoints.MapControllerRoute("pagination", "Products/Page{productPage}",
                     new { Conroller = "Store", action = "Index", productPage = 1 });
-
+                endpoints.MapRazorPages();
             });
             SeedData.EnsurePopulated(app);
         }
