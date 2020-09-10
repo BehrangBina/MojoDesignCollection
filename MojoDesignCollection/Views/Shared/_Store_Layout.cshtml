@@ -1,8 +1,9 @@
 ﻿@using MojoDesignCollection.Models
 @using MojoDesignCollection.Models.ModelView
-@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
-@addTagHelper *,MojoDesignCollection
- 
+
+@addTagHelper *, MojoDesignCollection
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <!DOCTYPE html>
 
 <html>
@@ -17,13 +18,13 @@
     <link rel="stylesheet" href="~/lib/css/MDC-Store.css" />
 </head>
 <body>
-     <vc:navigation-menu />
+    <vc:navigation-menu />
 
     <div>
 
         @RenderBody()
     </div>
- 
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
             crossorigin="anonymous"></script>

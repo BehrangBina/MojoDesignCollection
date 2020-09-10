@@ -4,6 +4,7 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Store_Layout.cshtml";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <div class="storemain">
     <div class="container">
@@ -20,11 +21,11 @@
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong>Info!</strong> No Doll Found! Try To Select Category form the top menu
             </div>
- 
+
         }
         <div class="d-flex justify-content-center mdc-pagination">
             <ul class="pagination pagination-circle pagination-md">
- 
+
                 @{
                     var pagingInfo = Model.PagingInfo;
                     for (int pn = 1; pn <= pagingInfo.TotalPages; pn++)
