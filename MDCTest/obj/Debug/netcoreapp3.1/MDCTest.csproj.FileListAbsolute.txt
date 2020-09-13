@@ -1,3 +1,7 @@
+D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.csprojAssemblyReference.cache
+D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.AssemblyInfoInputs.cache
+D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.AssemblyInfo.cs
+D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.csproj.CoreCompileInputs.cache
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\testhost.dll
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\MojoDesignCollection.Views.dll
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\MojoDesignCollection.Views.pdb
@@ -208,10 +212,6 @@ D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\ne
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\MojoDesignCollection.dll
 D:\Work\MojoDesignCollection\MDCTest\bin\Debug\netcoreapp3.1\MojoDesignCollection.pdb
-D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.csprojAssemblyReference.cache
-D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.AssemblyInfoInputs.cache
-D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.AssemblyInfo.cs
-D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.csproj.CoreCompileInputs.cache
 D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.csproj.CopyComplete
 D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.dll
 D:\Work\MojoDesignCollection\MDCTest\obj\Debug\netcoreapp3.1\MDCTest.pdb

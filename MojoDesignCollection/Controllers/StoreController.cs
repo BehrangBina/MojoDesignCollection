@@ -2,31 +2,37 @@
 using Microsoft.AspNetCore.Mvc;
 using MojoDesignCollection.Models.Repository;
 using System.Linq;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc;
 using MojoDesignCollection.Models;
 using MojoDesignCollection.Models.Helper;
+using MojoDesignCollection.Models.Infrastructure;
 using MojoDesignCollection.Models.ModelView;
 
 namespace MojoDesignCollection.Controllers
 {
-    public class StoreController :Controller
+    public class StoreController : Controller
     {
         private readonly IStoreRepository _repository;
-        public int PageSize=3;
+        public int PageSize = 3;
+        
+
         public StoreController(IStoreRepository repository)
         {
             _repository = repository;
         }
 
-        public ViewResult Index(string category ,int productPage = 1)
+        public ViewResult Index(string category, int productPage = 1)
         {
-
+            ViewBag.cart = HttpContext.Session.GetJson<Cart>("cart");
             IQueryable<Product> products = _repository
                 .Products;
 
-         
 
-            if (!string.Equals(category, CategoryEnum.All.ToString(), 
-                StringComparison.OrdinalIgnoreCase) )
+
+            if (!string.Equals(category, CategoryEnum.All.ToString(),
+                StringComparison.OrdinalIgnoreCase))
             {
                 products = products.Where(p =>
                     p.Category.ToLower() == Convertor.StringToCategoryEnum(category).ToString().ToLower());
@@ -38,18 +44,38 @@ namespace MojoDesignCollection.Controllers
                 ItemsPerPage = PageSize,
                 TotalItems = products.Count()
             };
-            products =  products.OrderBy(p => p.ProductId)
+            products = products.OrderBy(p => p.ProductId)
                 .Skip((productPage - 1) * PageSize)
                 .Take(PageSize);
 
             ProductListViewModel productListViewModel = new ProductListViewModel
             {
-                PagingInfo = pagingInfo, Products = products, Category = Convertor.StringToCategoryEnum(category).ToString()
+                PagingInfo = pagingInfo,
+                Products = products,
+                Category = Convertor.StringToCategoryEnum(category).ToString()
             };
             return View(productListViewModel);
- 
-            
         }
 
+        [HttpPost]
+        public void Index(long productId,string returnUrl)
+        {
+            int productPage = QueryString.GetPageNumber(returnUrl);
+            var category = QueryString.GetCategory(returnUrl);
+            Product product = _repository.Products
+                .FirstOrDefault(p => p.ProductId == productId);
+            var cart = HttpContext.Session.GetJson<Cart>("cart")
+                   ?? new Cart();
+
+            cart.AddItem(product, 1);
+            
+            HttpContext.Session.SetJson("cart", cart);
+            ViewBag.cart = HttpContext.Session.GetJson<Cart>("cart");
+            
+            Response.Redirect($"/Store?productPage={productPage}&category={category}");
+        }
+ 
+
+ 
     }
 }

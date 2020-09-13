@@ -5,7 +5,7 @@
 }
 
 #header {
-    background-color: whitesmoke;
+    background-color: white;
     color: black;
     text-align: center;
     height: 50px;
@@ -85,17 +85,17 @@
 
 #HomePage {
     height: 100vh;
-    background-color: whitesmoke;
+   
 }
 
 #AboutPage {
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 #ContactPage {
     height: 100vh;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 .logo {

@@ -149,4 +149,5 @@ D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\static
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.dll
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.pdb
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.genruntimeconfig.cache
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\SideCart.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csprojAssemblyReference.cache

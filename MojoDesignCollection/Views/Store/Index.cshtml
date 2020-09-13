@@ -1,4 +1,5 @@
 ﻿
+@using MojoDesignCollection.Models
 @model MojoDesignCollection.Models.ModelView.ProductListViewModel
 @{
     ViewData["Title"] = "Index";
@@ -6,9 +7,13 @@
 }
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{ ViewData["PI"]=Model.PagingInfo; }
+@await Html.PartialAsync("Components/SideCart");
 <div class="storemain">
+
     <div class="container">
         <div class="row">
+
             @foreach (var p in Model.Products)
             {
                 @await Html.PartialAsync("Components/ProductCard", p);
@@ -28,9 +33,9 @@
 
                 @{
                     var pagingInfo = Model.PagingInfo;
+
                     for (int pn = 1; pn <= pagingInfo.TotalPages; pn++)
                     {
-
                         <li class="page-item"><a class="page-link" href="?productPage=@pn&category=@Model.Category"> @pn </a></li>
                     }
                 }
