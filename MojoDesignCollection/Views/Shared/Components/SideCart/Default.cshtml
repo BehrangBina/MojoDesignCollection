@@ -1,0 +1,48 @@
+﻿@model MojoDesignCollection.Models.Cart
+<section id="SideMenu">
+    <button type="button" class="open" id="open" onclick="openNav()">
+        <svg width="2.0em" height="2.0em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill"
+             fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z">
+            </path>
+        </svg>
+    </button>
+    <div class="side-shop" id="side-shop">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="side-shop-head">
+            <div>
+                <h5>Your Cart</h5>
+            </div>
+            <span><img src="image-desktop/1x/shoppingDoll.png" alt="" class="shoppingDoll"></span>
+        </div>
+        <div class="bg-white ml-3 mr-3  side-cart-container pt-3">
+
+            @{
+                var cart = Model.Lines;
+
+            }
+            @if (cart != null)
+            {
+                foreach (var line in cart)
+                {
+                    <div class="row side-cart-holder pt-3 pb-3">
+                        <div class="col-sm-5">
+                            <img src="https://via.placeholder.com/140" src="." />
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-5">
+                            <span class="text-left">
+                                @line.Product.Name
+                            </span>
+                            <p class="text-right"> @line.Product.Price.Value.ToString("c")</p>
+                            <p>@line.Product.Quantity</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    
+</section>
