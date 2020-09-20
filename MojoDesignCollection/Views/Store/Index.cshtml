@@ -6,7 +6,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{ ViewData["PI"]=Model.PagingInfo; }
-@await Html.PartialAsync("Components/SideCart");
+@await Html.PartialAsync("Components/SideCart")
 <div class="storemain">
 
     <div class="container">
@@ -14,7 +14,7 @@
 
             @foreach (var p in Model.Products)
             {
-                @await Html.PartialAsync("Components/ProductCard", p);
+                @await Html.PartialAsync("Components/ProductCard", p)
             }
         </div>
         <br />
