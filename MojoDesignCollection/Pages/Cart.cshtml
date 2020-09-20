@@ -1,5 +1,6 @@
 ﻿@page
 @model MojoDesignCollection.Pages.CartModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <h2>Your Cart</h2>
 <table class="table table-bordered table-striped">
     <thead>
@@ -8,6 +9,7 @@
             <th>Item</th>
             <th class="text-right">Price</th>
             <th class="text-right">Subtotal</th>
+            <th><span class="glyphicon glyphicon-remove-circle"></span></th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +20,13 @@
                 <td class="text-left">@line.Product.Name</td>
                 <td class="text-right"> @line.Product.Price.Value.ToString("C")</td>
                 <td class="text-right">@((line.Product.Price*line.Quantity).Value.ToString("C"))</td>
+                <td class="text-center">
+                    <form asp-page-handler="Remove" method="post">
+                        <input type="hidden" name="ProductId" value="@line.Product.ProductId" />
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                        <button type="submit" class="btn btn-sm btn-danger"> Remove </button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

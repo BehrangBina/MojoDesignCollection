@@ -12,18 +12,30 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="lib/font-awesome/css/all.min.css"/>
     <link rel="shortcut icon" href="~/image-desktop/1x/nav-icon.png" />
     <link rel="stylesheet" href="~/lib/css/MDC.css" />
     <link rel="stylesheet" href="~/lib/css/MDC-Store.css" />
     <link rel="stylesheet" href="lib/css/Store.css"/>
+    
      
 </head>
 <body>
     <vc:navigation-menu />
-
+    <!---->
+<br/><br /> 
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Mojo(R)</div>
+                <div class="col-6 text-right text-right">
+                    <vc:cart-summary></vc:cart-summary>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
     <div>
-
         @RenderBody()
     </div>
 
@@ -33,9 +45,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-<script src="lib/js/mdc.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="lib/js/mdc.js"></script>
 </body>
 </html>

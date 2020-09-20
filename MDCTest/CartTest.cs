@@ -1,5 +1,8 @@
 ﻿using System.Linq;
 using MojoDesignCollection.Models;
+using MojoDesignCollection.Models.Repository;
+using MojoDesignCollection.Pages;
+using Moq;
 using NUnit.Framework;
 
 namespace MDCTest
@@ -13,6 +16,44 @@ namespace MDCTest
         {
              p1 = new Product { ProductId = 1, Name = "1" };
              p2 = new Product { ProductId = 2, Name = "2" };
+        }
+
+        [Test]
+        public void CanLoadCart()
+        {
+            Mock<IStoreRepository> mockRepo= new Mock<IStoreRepository>();
+            mockRepo.Setup(m => m.Products).Returns((new[] {p1, p2}).AsQueryable<Product>());
+            
+            Cart cart = new Cart();
+            cart.AddItem(p1,1);
+            cart.AddItem(p2,1);
+
+            //Action 
+            CartModel cartModel = new CartModel(mockRepo.Object,cart);
+            var returnUrl = "myUrl";
+            cartModel.OnGet(returnUrl);
+
+            // Assert 
+            Assert.AreEqual(cart.Lines.Count,2);
+            Assert.AreEqual(cartModel.ReturnUrl, returnUrl);
+        }
+
+        [Test]
+        public void Can_update_Cart()
+        {
+            var mockRepo = new Mock<IStoreRepository>();
+            mockRepo.Setup(m => m.Products).Returns((new[] {p1}).AsQueryable());
+
+            Cart cart = new Cart();
+
+            //  Action
+            CartModel cartModel = new CartModel(mockRepo.Object,cart);
+            var returnUrl = "myUrl";
+            cartModel.OnPost(1, returnUrl);
+
+            // Assert
+            Assert.AreEqual(cart.Lines.Count,1);
+            Assert.AreEqual(1,cart.Lines.First().Quantity);
         }
         [Test]
         public void Can_Add_Line()

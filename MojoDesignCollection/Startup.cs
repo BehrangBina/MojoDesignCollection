@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MojoDesignCollection.Models;
 using MojoDesignCollection.Models.DB;
 using MojoDesignCollection.Models.Repository;
 
@@ -33,6 +35,12 @@ namespace MojoDesignCollection
             services.AddDistributedMemoryCache(); // in memory data store
             services.AddSession();
             services.AddScoped<IStoreRepository, EfMdcRepository>();
+
+            //services.AddScoped<Cart>(sp=>SessionCart.GetCart((sp)));
+            services.AddScoped(sp => SessionCart.GetCart((sp)));
+            // Same object should be used to satisfy request to shopping cart
+           
+            services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();  //The Same object should be used
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

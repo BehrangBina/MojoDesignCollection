@@ -7,9 +7,9 @@ namespace MojoDesignCollection.Models
     public class Cart
     {
         public List<CartLine> Lines { get; set; }=new List<CartLine>();
-        
 
-        public void AddItem(Product product, int quantity)
+        //  A virtual method has an implementation in a base class as well as derived the class.
+        public virtual void AddItem(Product product, int quantity)
         {
             CartLine line = Lines.FirstOrDefault(p => p.Product.ProductId == product.ProductId);
             if (line == null)
@@ -22,12 +22,12 @@ namespace MojoDesignCollection.Models
             }
         }
 
-        public void RemoveLine(Product product)
+        public virtual void RemoveLine(Product product)
         {
             Lines.RemoveAll(p => p.Product.ProductId == product.ProductId);
         }
 
-        public void ClearCart()
+        public virtual void ClearCart()
         {
             Lines.Clear();
         }

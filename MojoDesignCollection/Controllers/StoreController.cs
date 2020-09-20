@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MojoDesignCollection.Models.Repository;
 using System.Linq;
-using System.Text.RegularExpressions;
-using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc;
 using MojoDesignCollection.Models;
 using MojoDesignCollection.Models.Helper;
 using MojoDesignCollection.Models.Infrastructure;
@@ -25,7 +22,11 @@ namespace MojoDesignCollection.Controllers
 
         public ViewResult Index(string category, int productPage = 1)
         {
-            ViewBag.cart = HttpContext.Session.GetJson<Cart>("cart");
+            if (HttpContext != null)
+            {
+                ViewBag.cart = HttpContext.Session.GetJson<Cart>("cart");
+            }
+
             IQueryable<Product> products = _repository
                 .Products;
 

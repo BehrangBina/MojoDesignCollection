@@ -31,7 +31,7 @@ namespace MDCTest
             string[] result = ((IEnumerable<string>) ((ViewViewComponentResult) nav.Invoke()).ViewData.Model)
                 .ToArray();
 
-            Assert.IsTrue(result.SequenceEqual(new[] { "Fairy", "Nixie", "Tutu" }));
+            Assert.IsTrue(result.SequenceEqual(new[] { "Tutu" ,"Fairy", "Nixie", "All"}));
 
         }
     }
