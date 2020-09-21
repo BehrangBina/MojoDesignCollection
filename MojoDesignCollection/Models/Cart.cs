@@ -7,7 +7,7 @@ namespace MojoDesignCollection.Models
     public class Cart
     {
         public List<CartLine> Lines { get; set; }=new List<CartLine>();
-
+        
         //  A virtual method has an implementation in a base class as well as derived the class.
         public virtual void AddItem(Product product, int quantity)
         {

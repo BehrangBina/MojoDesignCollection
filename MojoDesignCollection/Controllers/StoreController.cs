@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MojoDesignCollection.Models.Repository;
 using System.Linq;
@@ -13,11 +14,12 @@ namespace MojoDesignCollection.Controllers
     {
         private readonly IStoreRepository _repository;
         public int PageSize = 3;
-        
+        public Cart Cart { get; set; }
 
-        public StoreController(IStoreRepository repository)
+        public StoreController(IStoreRepository repository, Cart cartService)
         {
             _repository = repository;
+            Cart = cartService;
         }
 
         public ViewResult Index(string category, int productPage = 1)
@@ -75,8 +77,14 @@ namespace MojoDesignCollection.Controllers
             
             Response.Redirect($"/Store?productPage={productPage}&category={category}");
         }
+
+        [HttpPost]
+        public void Remove(long productId, string returnUrl)
+        { 
+            Cart.RemoveLine(Cart.Lines.First(cl => cl.Product.ProductId == productId).Product);
+            Response.Redirect($"/Store"+returnUrl);
+        }
  
 
- 
     }
 }

@@ -1,4 +1,5 @@
 ﻿@model MojoDesignCollection.Models.Cart
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <section id="SideMenu">
     <button type="button" class="open" id="open" onclick="openNav()">
         <svg width="2.0em" height="2.0em" viewBox="0 0 16 16" class="bi bi-arrow-left-circle-fill"
@@ -29,20 +30,32 @@
                 {
                     <div class="row side-cart-holder pt-3 pb-3">
                         <div class="col-sm-5">
-                            <img src="https://via.placeholder.com/140" src="." />
+                            <img src="https://via.placeholder.com/140" src="." class="pl-1" />
                         </div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-5">
-                            <span class="text-left">
-                                @line.Product.Name
+                            <span class="text-center">
+                                @line.Product.Name.Split(" ")[0]
                             </span>
-                            <p class="text-right"> @line.Product.Price.Value.ToString("c")</p>
-                            <p>@line.Product.Quantity</p>
+                            <div class="text-right">
+                                @line.Product.Price.Value.ToString("c")
+                                <span class="text-right"><br /> @line.Quantity</span>
+                                <br /><br />
+                                      <form asp-action="Remove" method="post">
+                                          <input type="hidden" name="ProductId" value="@line.Product.ProductId" />
+                                          <input type="hidden" name="returnUrl" value="?productPage=1&category=@cart.FirstOrDefault()?.Product.Category" />
+                                          <button type="submit" class="btn btn-sm btn-danger">
+                                              <i class="far fa-trash-alt"></i>
+                                          </button>
+                                      </form>
+                            </div>
                         </div>
+             
                     </div>
+                  
                 }
             }
         </div>
     </div>
-    
+
 </section>

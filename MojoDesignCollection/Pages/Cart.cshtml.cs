@@ -19,16 +19,16 @@ namespace MojoDesignCollection.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-           // Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+          
+             RedirectToPage(new { returnUrl = returnUrl });
         }
         public IActionResult OnPost(long productId, string returnUrl)
         {
             Product product = _repository.Products
                 .FirstOrDefault(p => p.ProductId == productId);
-            //Cart = HttpContext.Session.GetJson<Cart>("cart")
-            //       ?? new Cart();
+
             Cart.AddItem(product,1);
-             //HttpContext.Session.SetJson("cart", Cart);
+           
             return RedirectToPage( new {returnUrl = returnUrl});
         }
 

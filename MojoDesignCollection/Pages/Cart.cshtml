@@ -1,4 +1,5 @@
 ﻿@page
+@using MojoDesignCollection.Models
 @model MojoDesignCollection.Pages.CartModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <h2>Your Cart</h2>
@@ -40,7 +41,15 @@
     </tfoot>
 </table>
 <div class="text-center">
-    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+    @{
+        string category = CategoryEnum.All.ToString();
+        if (Model.Cart.Lines.Any())
+        {
+            category = Model.Cart.Lines.First().Product.Category;
+        }
+
+    }
+    <a class="btn btn-primary" href="/store?productPage=1&category=@category">Continue Shopping</a>
 </div>
 
 
