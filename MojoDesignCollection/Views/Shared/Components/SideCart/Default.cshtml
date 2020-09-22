@@ -14,7 +14,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="side-shop-head">
             <div>
-                <h5>Your Cart</h5>
+                <h5><a class="text-success" href="/Cart"> Your Cart:</a></h5>
             </div>
             <span><img src="image-desktop/1x/shoppingDoll.png" alt="" class="shoppingDoll"></span>
         </div>
@@ -26,6 +26,7 @@
             }
             @if (cart != null)
             {
+                
                 foreach (var line in cart)
                 {
                     <div class="row side-cart-holder pt-3 pb-3">
@@ -54,6 +55,11 @@
                     </div>
                   
                 }
+                <div class="row">
+                    <div class="col-sm-6"><a class="ml-4 badge badge-danger" href="/Store/ClearAll">Clear All</a></div>
+                    <div class="col-sm-6">Total: @cart.Sum(i=>i.Product.Price)?.ToString("c")</div>
+                </div>
+                <div class="row pb-3"></div>
             }
         </div>
     </div>

@@ -67,15 +67,10 @@ namespace MojoDesignCollection.Controllers
             var category = QueryString.GetCategory(returnUrl);
             Product product = _repository.Products
                 .FirstOrDefault(p => p.ProductId == productId);
-            var cart = HttpContext.Session.GetJson<Cart>("cart")
-                   ?? new Cart();
 
-            cart.AddItem(product, 1);
-            
-            HttpContext.Session.SetJson("cart", cart);
-            ViewBag.cart = HttpContext.Session.GetJson<Cart>("cart");
-            
-            Response.Redirect($"/Store?productPage={productPage}&category={category}");
+            Cart.AddItem(product, 1);
+
+            Response.Redirect($"/Store{returnUrl}");
         }
 
         [HttpPost]
@@ -84,7 +79,12 @@ namespace MojoDesignCollection.Controllers
             Cart.RemoveLine(Cart.Lines.First(cl => cl.Product.ProductId == productId).Product);
             Response.Redirect($"/Store"+returnUrl);
         }
- 
+
+        public void ClearAll()
+        {
+            Cart.ClearCart();
+            Response.Redirect($"/Store?productPage=1&category=Fairy");
+        }
 
     }
 }

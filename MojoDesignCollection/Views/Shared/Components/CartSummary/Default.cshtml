@@ -1,16 +1,16 @@
-﻿ 
-@using MojoDesignCollection.Models.Infrastructure
+﻿@using MojoDesignCollection.Models.Infrastructure
 @model MojoDesignCollection.Models.Cart
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <div>
     @if (Model.Lines.Count > 0)
     {
-    <small class="navbar-text">
-        <strong>Your Cart:</strong>
-        @Model.Lines.Sum(p => p.Quantity) <span>Item(s)</span>
-        @Model.ComputeTotalPrice().ToString("c")
-    </small>
+        <small class="navbar-text mr-2">
+            <strong><a href="/Cart" class="mainCart"> Your Cart:</a></strong>
+            @Model.Lines.Sum(p => p.Quantity) <span>Item(s)</span>
+            @Model.ComputeTotalPrice().ToString("c")
+        </small>
     }
-    <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/cart"
+    <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/cart" id="cart"
        asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
         <i class="fa fa-shopping-cart"></i>
     </a>
