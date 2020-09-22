@@ -80,6 +80,17 @@ namespace MojoDesignCollection.Controllers
             Response.Redirect($"/Store"+returnUrl);
         }
 
+        //[HttpPost]
+        //public void Discount(string discountCode)
+        //{
+
+        //    if (discountCode == "Mojo10") // To Be remove
+        //    {
+        //        var total=Cart.ComputeTotalPrice();
+        //        ViewBag.Total = total - (total * 0.1m);
+        //        Response.Redirect($"/cart");
+        //    }
+        //}
         public void ClearAll()
         {
             Cart.ClearCart();

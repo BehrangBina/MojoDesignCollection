@@ -32,6 +32,16 @@ namespace MojoDesignCollection.Pages
             return RedirectToPage( new {returnUrl = returnUrl});
         }
 
+        public void OnPostDiscount(string discountCode)
+        {
+            if (discountCode == "Mojo10") // To Be remove
+            {
+                var total = Cart.ComputeTotalPrice();
+                ViewData["Total"] = total - (total * 0.1m);
+              
+            }
+        }
+
         public IActionResult OnPostRemove(long productId, string returnUrl)
         {
             Cart.RemoveLine(Cart.Lines.First(cl=>cl.Product.ProductId==productId).Product);

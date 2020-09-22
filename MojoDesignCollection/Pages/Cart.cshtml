@@ -2,45 +2,72 @@
 @using MojoDesignCollection.Models
 @model MojoDesignCollection.Pages.CartModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<h2>Your Cart</h2>
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>Quantity</th>
-            <th>Item</th>
-            <th class="text-right">Price</th>
-            <th class="text-right">Subtotal</th>
-            <th><span class="glyphicon glyphicon-remove-circle"></span></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var line in @Model.Cart.Lines)
-        {
-            <tr>
-                <td class="text-center">@line.Quantity</td>
-                <td class="text-left">@line.Product.Name</td>
-                <td class="text-right"> @line.Product.Price.Value.ToString("C")</td>
-                <td class="text-right">@((line.Product.Price*line.Quantity).Value.ToString("C"))</td>
-                <td class="text-center">
-                    <form asp-page-handler="Remove" method="post">
-                        <input type="hidden" name="ProductId" value="@line.Product.ProductId" />
-                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
-                        <button type="submit" class="btn btn-sm btn-danger"> Remove </button>
-                    </form>
-                </td>
-            </tr>
-        }
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" class="text-right">Total:</td>
-            <td class="text-right">
-                @Model.Cart.ComputeTotalPrice().ToString("C")
-            </td>
-            <td></td>
-        </tr>
-    </tfoot>
-</table>
+
+
+<div class="row pt-4">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-5">
+        <h2>Your Cart</h2>
+    </div>
+    <div class="col-sm-3">
+    </div>
+</div>
+
+<div class="orders">
+    @foreach (var line in @Model.Cart.Lines)
+    {
+        <div class="row pt-4">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+                <img src="https://via.placeholder.com/140" src="." class="pl-1" />
+                <span class="ml-2 allign-middle">@line.Product.Name</span>
+            </div>
+            <div class="col-sm-3">
+                <span class="allign-middle t-2">
+                    @if (line.Product.Price != null)
+                    {
+                        @line.Product.Price.Value.ToString("C")
+                    }
+                </span><br />
+                <form asp-page-handler="Remove" method="post">
+                    <input type="hidden" name="ProductId" value="@line.Product.ProductId" />
+                    <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+                    <button type="submit" class="btn btn-sm btn-danger"> Remove </button>
+                </form>
+
+            </div>
+            <div class="col-sm-2"></div>a
+        </div>
+    }
+    <form asp-page-handler="Discount" method="post">
+        <div class="row pt-4">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+                <input type="text" name="discountCode" placeholder="Discount Code">
+                <button class="btn btn-info" type="submit">Apply</button>
+            </div>
+            <div class="col-sm-3 pb-3">
+                @{
+                    bool discountApplied = ViewData["Total"] != null;
+                    string subTotal = "";
+                    subTotal = discountApplied ? (string)ViewBag.Total.ToString("C") :
+                        @Model.Cart.ComputeTotalPrice().ToString("C");
+                }
+                @if (discountApplied)
+                {
+                    <del class="text-muted font-italic">
+                        @Model.Cart.ComputeTotalPrice().ToString("C")
+                    </del><br/>
+                }
+                <span class="text-right font-weight-bold">
+                    Total:<span class="text-info "> @subTotal</span>
+                </span>
+
+            </div>
+        </div>
+    </form>
+</div>
+
 <div class="text-center">
     @{
         string category = CategoryEnum.All.ToString();
@@ -51,6 +78,7 @@
 
     }
     <a class="btn btn-primary" href="/store?productPage=1&category=@category">Continue Shopping</a>
+    <a class="btn btn-primary" asp-action="Chekout" asp-controller="Order">Checkout</a>
 </div>
 
 
