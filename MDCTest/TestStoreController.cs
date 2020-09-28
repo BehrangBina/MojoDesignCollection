@@ -30,7 +30,7 @@ namespace MDCTest
             ).AsQueryable<Product>());
 
             //  Act
-            StoreController storeController = new StoreController(mock.Object);
+            StoreController storeController = new StoreController(mock.Object,new Cart());
             ProductListViewModel productListViewModels = storeController.Index(categoryEnum.ToString())
                 .ViewData.Model as ProductListViewModel;
 
@@ -59,7 +59,7 @@ namespace MDCTest
                     new Product {Name = "Test6", Price = 94.90m}
                 }).AsQueryable<Product>());
 
-            StoreController storeController = new StoreController(storeRepoMock.Object);
+            StoreController storeController = new StoreController(storeRepoMock.Object,new Cart());
             storeController.PageSize = 4;
             
             // ARRANGE

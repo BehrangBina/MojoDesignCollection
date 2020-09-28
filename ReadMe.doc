@@ -49,3 +49,5 @@ dotnet ef database update
 
 Reset
 dotnet ef database drop --force --context MojoDesignCollectionDBContext
+dotnet ef database update  --context MojoDesignCollectionDBContext
+

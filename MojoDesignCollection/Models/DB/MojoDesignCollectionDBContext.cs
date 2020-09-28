@@ -9,6 +9,7 @@ namespace MojoDesignCollection.Models.DB
         {
         }
         public DbSet<Product> ProductsDbSet { get; set; }
+        public DbSet<Order> Orders { get; set; }
          
     }
 }

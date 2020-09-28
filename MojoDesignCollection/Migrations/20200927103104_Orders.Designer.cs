@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MojoDesignCollection.Models.DB;
 
 namespace MojoDesignCollection.Migrations
 {
     [DbContext(typeof(MojoDesignCollectionDbContext))]
-    partial class MojoDesignCollectionDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200927103104_Orders")]
+    partial class Orders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

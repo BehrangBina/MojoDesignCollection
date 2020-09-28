@@ -25,8 +25,10 @@ namespace MDCTest
                 new Product {Name = "P5", ProductId = 5},
                 new Product {Name = "P6", ProductId = 6}
             }).AsQueryable());
+            Cart cart= new Cart();
+            
             // Define Page Size 
-            StoreController storeController = new StoreController(mock.Object){PageSize = 3};
+            StoreController storeController = new StoreController(mock.Object, cart) {PageSize = 3};
             
             // Act
             ProductListViewModel result =
