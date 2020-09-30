@@ -35,7 +35,7 @@ namespace MojoDesignCollection
             services.AddDistributedMemoryCache(); // in memory data store
             services.AddSession();
             services.AddScoped<IStoreRepository, EfMdcRepository>();
-
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
             //services.AddScoped<Cart>(sp=>SessionCart.GetCart((sp)));
             services.AddScoped(sp => SessionCart.GetCart((sp)));
             // Same object should be used to satisfy request to shopping cart
