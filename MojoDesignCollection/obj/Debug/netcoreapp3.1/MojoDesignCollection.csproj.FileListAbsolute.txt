@@ -150,7 +150,8 @@ D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDe
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.pdb
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.genruntimeconfig.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Store\Components\SideCart.cshtml.g.cs
-D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\MojoDesignCollection.csprojAssemblyReference.cache
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CartSummary\Default.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SideCart\Default.cshtml.g.cs
 D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Pages\Completed.cshtml.g.cs
+D:\Work\MojoDesignCollection\MojoDesignCollection\obj\Debug\netcoreapp3.1\Razor\Views\Order\ThankYou.cshtml.g.cs

@@ -4,6 +4,11 @@
     &lt;TestId&gt;NUnit3x::F8966E28-F2D7-43E5-93C4-CB25CAC39D3F::.NETCoreApp,Version=v3.1::MDCTest.OrderControllerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9d3b5d0a_002D008c_002D4f85_002D9f5d_002D1a57edc56c86/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="OrderControllerTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::F8966E28-F2D7-43E5-93C4-CB25CAC39D3F::.NETCoreApp,Version=v3.1::MDCTest.OrderControllerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d9d309ee_002D8f27_002D41cf_002Da5b0_002D56aca7ff221e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Can_Checkout_And_Submit_Order" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::F8966E28-F2D7-43E5-93C4-CB25CAC39D3F::.NETCoreApp,Version=v3.1::MDCTest.OrderControllerTests.Can_Checkout_And_Submit_Order&lt;/TestId&gt;&#xD;

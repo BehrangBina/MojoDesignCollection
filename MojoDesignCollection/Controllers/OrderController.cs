@@ -1,6 +1,4 @@
-﻿
-
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MojoDesignCollection.Models;
 using MojoDesignCollection.Models.Repository;
@@ -43,6 +41,12 @@ namespace MojoDesignCollection.Controllers
                 return View();
             }
 
+        }
+
+        public IActionResult ThankYou(string orderId)
+        {
+            int.TryParse(orderId, out var tmpOrderId);
+            return View(tmpOrderId);
         }
     }
 

@@ -1,0 +1,25 @@
+﻿body, html {
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    min-height: 100%;
+}
+
+.div1 {
+    height: 10vh;
+    width: 100vw;
+
+}
+
+h3 {
+    color: rgba(0, 140, 186, 1);
+}
+
+.thankyou {
+    background-image: url(/image-desktop/SVG/ThankYou.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+}

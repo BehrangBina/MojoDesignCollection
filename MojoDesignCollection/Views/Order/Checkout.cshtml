@@ -60,7 +60,9 @@
 
     </div>
     <div class="container">
+        @*<div asp-validation-summary="All" class="text-danger">*@
 
+        @*</div>*@
         <br><br>
         <div class="row pt-3">
             <div class="col-md-1"></div>
@@ -102,9 +104,12 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
                     <input asp-for="FirstName" class="form-control" placeholder="First Name" type="text" />
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-5">
                     <input asp-for="LastName" class="form-control" placeholder="Last Name" type="text" />
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+
                 </div>
                 <div class="col-md-1"></div>
             </div><br>
@@ -114,6 +119,8 @@
                 <div class="col-md-10">
                     <div class="form-group">
                         <input asp-for="Line1" class="form-control" placeholder="Address Line1" type="text" />
+                        @Html.ValidationMessageFor(m => m.Line1, "", new { @class = "text-danger" })
+
                     </div>
                 </div>
                 <div class="col-md-1"></div>
@@ -134,18 +141,41 @@
                 </div>
                 <div class="col-md-1"></div>
             </div><br>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <input asp-for="City" class="form-control" placeholder="City" type="text" />
+                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
 
+                </div>
+                <div class="col-md-1"></div>
+            </div><br>
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-5">
                     <span>Country:      </span>
                     <select class="selectpicker countrypicker dropdown" data-flag="true" name="Country"></select>
+                    @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <br />
+            
+            
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <input asp-for="Zip" class="form-control" placeholder="Zip / Post" type="text" />
+                    @Html.ValidationMessageFor(m => m.Zip, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-5">
-                    <input asp-for="State" class="form-control" placeholder="State/Teritory" type="text" />
+                    <input asp-for="State" class="form-control" placeholder="State" type="text" />
+                    @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+
                 </div>
                 <div class="col-md-1"></div>
             </div><br>
+            
 
             <div class="row">
                 <div class="col-md-1"></div>
@@ -158,7 +188,7 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <input type="checkbox" name="giftWrapped" checked>
+                    <input type="checkbox" name="giftWrapped">
                     <label for="giftWrapped">Wrap As a gift</label>
                 </div>
                 <div class="col-md-1"></div>
@@ -170,7 +200,7 @@
                     <div class="form-group">
                         <label>Note:</label>
                         <div class="form-group shadow-textarea">
-                            <textarea wrap="hard" class="form-control z-depth-1" id="note" rows="5"
+                            <textarea wrap="hard" class="form-control z-depth-1" id="NoteToSeller" rows="5" name="NoteToSeller"
                                       placeholder="Note To The Seller"></textarea>
                         </div>
                     </div>

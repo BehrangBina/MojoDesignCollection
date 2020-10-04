@@ -30,6 +30,7 @@ namespace MojoDesignCollection.Models
         [Required(ErrorMessage = "Please Enter State")]
         public string State { get; set; }
 
+        [Required(ErrorMessage = "Please Provide Zip/PostCode")]
         public string Zip { get; set; }
 
         public string Phone { get; set; }

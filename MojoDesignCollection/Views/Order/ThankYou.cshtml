@@ -1,0 +1,45 @@
+﻿
+@{
+    @model int;
+}
+
+ 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mdc Thank You</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/lib/css/thankyou.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div class="container flex-direction">
+
+        <div class="div1">
+            <h2> Thank you for Shopping from <span> Mojo Design Collection</span></h2>
+            <div class="order">
+                <h3>Order Number Is: #@Model</h3>
+                <p>We will ship your product as soon as possible</p>
+                <a class="back" asp-controller="Store">Return To Store</a>
+            </div>
+
+        </div>
+        <div class="thankyou">
+
+
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="/lib/js/thankyou.js"></script>
+ 
+</body>
+
+</html>
