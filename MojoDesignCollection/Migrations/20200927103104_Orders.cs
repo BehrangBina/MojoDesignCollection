@@ -24,7 +24,8 @@ namespace MojoDesignCollection.Migrations
                     Phone = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: false),
                     GiftWrap = table.Column<bool>(nullable: false),
-                    NoteToSeller = table.Column<string>(nullable: true)
+                    NoteToSeller = table.Column<string>(nullable: true),
+                    Shipped= table.Column<bool>(nullable: false),
                 },
                 constraints: table =>
                 {

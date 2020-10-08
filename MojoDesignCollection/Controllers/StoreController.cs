@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using MojoDesignCollection.Models.Repository;
 using System.Linq;
@@ -63,8 +62,6 @@ namespace MojoDesignCollection.Controllers
         [HttpPost]
         public void Index(long productId,string returnUrl)
         {
-            int productPage = QueryString.GetPageNumber(returnUrl);
-            var category = QueryString.GetCategory(returnUrl);
             Product product = _repository.Products
                 .FirstOrDefault(p => p.ProductId == productId);
 

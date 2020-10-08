@@ -51,3 +51,7 @@ Reset
 dotnet ef database drop --force --context MojoDesignCollectionDBContext
 dotnet ef database update  --context MojoDesignCollectionDBContext
 
+
+
+[NotMapped]   // if wanna exclude property from db
+

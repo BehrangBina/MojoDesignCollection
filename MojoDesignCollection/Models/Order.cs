@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace MojoDesignCollection.Models
@@ -39,5 +40,6 @@ namespace MojoDesignCollection.Models
 
         public bool GiftWrap { get; set; }
         public string NoteToSeller { get; set; }
+        [BindNever] public  bool Shipped { get; set; }
     }
 }

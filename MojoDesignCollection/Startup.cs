@@ -72,6 +72,7 @@ namespace MojoDesignCollection
                 endpoints.MapControllerRoute("pagination", "Products/Page{productPage}",
                     new { Conroller = "Store", action = "Index", productPage = 1 });
                 endpoints.MapRazorPages();
+                //endpoints.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
             });
             SeedData.EnsurePopulated(app);
         }
